@@ -1,0 +1,78 @@
+@header-height: 50px;
+
+// 定义滚动条变量
+@scrollbar-size: 8px;
+@scrollbar-thumb-color: #bfbfbf;
+@scrollbar-thumb-hover-color: #8c8c8c;
+@scrollbar-track-color: transparent;
+
+:root {
+  --header-height: @header-height;
+  --transition-duration: 0.3s;
+}
+
+.ant-layout .ant-layout-header {
+  height: @header-height;
+  padding: 0;
+  line-height: @header-height;
+  background-color: #fff !important;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ant-layout {
+  background-color: #f9f9f9 !important;
+}
+
+// 全局滚动条样式（应用于整个页面）
+html {
+  scrollbar-color: @scrollbar-thumb-color @scrollbar-track-color;
+  // Firefox 支持
+  scrollbar-width: thin;
+
+  // Webkit 内核浏览器
+  &::-webkit-scrollbar {
+    width: @scrollbar-size;
+    height: @scrollbar-size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: @scrollbar-thumb-color;
+    border-radius: @scrollbar-size / 2;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: @scrollbar-thumb-hover-color;
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: @scrollbar-track-color;
+  }
+}
+
+// 局部容器样式（添加 .antd-scrollbar 类到需要样式的容器）
+.antd-scrollbar {
+  scrollbar-color: @scrollbar-thumb-color @scrollbar-track-color;
+  // Firefox 支持
+  scrollbar-width: thin;
+
+  // Webkit 内核浏览器
+  &::-webkit-scrollbar {
+    width: @scrollbar-size;
+    height: @scrollbar-size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: @scrollbar-thumb-color;
+    border-radius: @scrollbar-size / 2;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: @scrollbar-thumb-hover-color;
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: @scrollbar-track-color;
+  }
+}
