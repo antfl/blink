@@ -1,3 +1,10 @@
 {
-  "outputDirectory": "./web/dist"
+  "outputDirectory": "./web/dist",
+  "redirects": [
+    {
+      "source": "/api",
+      "destination": "https://byteout.cn/node/",
+      "statusCode": 301
+    }
+  ]
 }
