@@ -2,7 +2,7 @@
 import {computed, onMounted} from 'vue'
 import {useRoute} from 'vue-router'
 import {usePasteStore} from '@/store/pasteStore'
-
+import {MdViewer} from "@/components/Markdown";
 const route = useRoute()
 const pasteId = route.params.id as string
 const pasteStore = usePasteStore()
@@ -32,7 +32,7 @@ function formatDate(dateString: string) {
     <a-alert v-if="error" :message="error" type="error" show-icon/>
     <a-card :loading="loading">
       <div v-if="paste" class="h-[calc(100vh_-_220px)] overflow-x-hidden overflow-y-auto">
-        <pre>{{ paste.content }}</pre>
+        <MdViewer :content="paste.content"/>
       </div>
     </a-card>
   </div>
