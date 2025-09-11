@@ -44,7 +44,7 @@ function reset() {
 <template>
   <a-card class="m-16px min-h-80vh">
     <div class="h-[calc(100vh_-_230px)] overflow-x-hidden overflow-y-auto">
-      <a-textarea class="h-100" v-model:value="content" :rows="20" placeholder="在此输入文本内容..."></a-textarea>
+      <a-textarea class="h-100" v-model:value="content" :rows="10" placeholder="在此输入文本内容..."></a-textarea>
     </div>
     <a-flex class="mt-16px" justify="space-between">
       <div>
