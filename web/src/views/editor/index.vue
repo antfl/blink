@@ -2,6 +2,7 @@
 import {ref, computed} from 'vue'
 import {usePasteStore} from '@/store/pasteStore'
 import {message} from "ant-design-vue";
+import {MdEditor} from "@/components/Markdown";
 
 const content = ref('')
 const expiresIn = ref(86400)
@@ -44,7 +45,7 @@ function reset() {
 <template>
   <a-card class="m-16px min-h-80vh">
     <div class="h-[calc(100vh_-_230px)] overflow-x-hidden overflow-y-auto">
-      <a-textarea class="h-100" v-model:value="content" :rows="10" placeholder="在此输入文本内容..."></a-textarea>
+      <MdEditor v-model="content"/>
     </div>
     <a-flex class="mt-16px" justify="space-between">
       <div>
