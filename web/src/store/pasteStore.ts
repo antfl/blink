@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import axios from 'axios'
+import request from '@/utils/request'
 
 interface Paste {
     id: string
@@ -26,7 +26,7 @@ export const usePasteStore = defineStore('paste', {
             this.error = null
 
             try {
-                const response = await axios.post('/api/create', {
+                const response = await request.post('/api/create', {
                     content,
                     expiresIn
                 })
@@ -53,7 +53,7 @@ export const usePasteStore = defineStore('paste', {
             this.error = null
 
             try {
-                const response = await axios.get(`/api/raw/${id}`)
+                const response = await request.get(`/api/raw/${id}`)
                 this.currentPaste = response.data
             } catch (error: any) {
                 this.error = error.response?.data?.error || error.message || '获取失败'
