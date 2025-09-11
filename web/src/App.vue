@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import zhCN from 'ant-design-vue/es/locale/zh_CN';
 import Layout from "@/layout/Layout.vue";
+
 const themeConfig = {
-  borderRadius: 2,
+  token: {
+    borderRadius: 2,
+  }
 }
 </script>
 

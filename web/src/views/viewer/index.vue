@@ -3,6 +3,7 @@ import {computed, onMounted} from 'vue'
 import {useRoute} from 'vue-router'
 import {usePasteStore} from '@/store/pasteStore'
 import {MdViewer} from "@/components/Markdown";
+
 const route = useRoute()
 const pasteId = route.params.id as string
 const pasteStore = usePasteStore()
@@ -21,7 +22,7 @@ function formatDate(dateString: string) {
 </script>
 
 <template>
-  <div class="m-16px">
+  <div class="m-8px min-h-500px">
     <div class="m-16px" v-if="paste">
       <a-tag :bordered="false" color="processing">生效中</a-tag>
       <span>创建时间：</span>
@@ -30,10 +31,8 @@ function formatDate(dateString: string) {
       <span class="color-#999">{{ formatDate(paste.expires) }}</span>
     </div>
     <a-alert v-if="error" :message="error" type="error" show-icon/>
-    <a-card :loading="loading">
-      <div v-if="paste" class="h-[calc(100vh_-_220px)] overflow-x-hidden overflow-y-auto">
-        <MdViewer :content="paste.content"/>
-      </div>
+    <a-card class="min-h-100px" :loading="loading">
+      <MdViewer v-if="paste" :content="paste.content"/>
     </a-card>
   </div>
 </template>

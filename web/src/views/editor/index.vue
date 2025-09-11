@@ -43,10 +43,8 @@ function reset() {
 </script>
 
 <template>
-  <a-card class="m-16px min-h-80vh">
-    <div class="h-[calc(100vh_-_230px)] overflow-x-hidden overflow-y-auto">
-      <MdEditor v-model="content"/>
-    </div>
+  <a-card class="m-8px">
+    <MdEditor v-model="content"/>
     <a-flex class="mt-16px" justify="space-between">
       <div>
         <a-space v-if="paste">
