@@ -12,7 +12,7 @@ const paste = computed(() => pasteStore.currentPaste)
 const loading = computed(() => pasteStore.loading)
 
 const pasteUrl = computed(() => {
-  return paste.value ? `${window.location.origin}/p/${paste.value.id}` : ''
+  return paste.value ? `${window.location.origin}/view/${paste.value.id}` : ''
 })
 
 const expiryText = computed(() => {
