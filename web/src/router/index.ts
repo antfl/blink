@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import {createRouter, createWebHistory} from 'vue-router'
 import Editor from '@/views/editor/index.vue'
 import Viewer from '@/views/viewer/index.vue'
 
@@ -11,7 +11,7 @@ const router = createRouter({
             component: Editor
         },
         {
-            path: '/p/:id',
+            path: '/view/:id',
             name: 'Viewer',
             component: Viewer,
             props: true

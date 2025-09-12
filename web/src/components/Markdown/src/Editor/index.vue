@@ -1,7 +1,5 @@
 <template>
-  <div class="markdown-container">
-    <Editor :value="modelValue" @change="handleChange" :plugins="plugins" :locale="lang" />
-  </div>
+  <Editor :value="modelValue" @change="handleChange" :plugins="plugins" :locale="lang" />
 </template>
 
 <script setup lang="ts">

@@ -43,9 +43,9 @@ function reset() {
 </script>
 
 <template>
-  <a-card class="m-8px">
+  <div class="editor-container bg-#f9f9f9 p-10px">
     <MdEditor v-model="content"/>
-    <a-flex class="mt-16px" justify="space-between">
+    <a-flex class="mt-10px" justify="space-between">
       <div>
         <a-space v-if="paste">
           <a-input type="text" :value="pasteUrl" readonly/>
@@ -61,7 +61,7 @@ function reset() {
       <a-space>
         <a-select class="w-100px" v-model:value="expiresIn">
           <a-select-option :value="3600">1小时</a-select-option>
-          <a-select-option :value="86400" selected>24小时</a-select-option>
+          <a-select-option :value="86400">24小时</a-select-option>
           <a-select-option :value="604800">7天</a-select-option>
         </a-select>
         <a-button type="primary" @click="createPaste" :loading="loading">
@@ -69,5 +69,14 @@ function reset() {
         </a-button>
       </a-space>
     </a-flex>
-  </a-card>
+  </div>
 </template>
+
+<style scoped lang="less">
+.editor-container {
+  :deep(.bytemd) {
+    min-height: calc(100vh - 110px);
+    z-index: 100;
+  }
+}
+</style>

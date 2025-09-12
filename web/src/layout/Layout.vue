@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import {useRoute} from 'vue-router'
 import Navbar from '@/layout/Navbar/index.vue'
 import ViewFooter from '@/layout/ViewFooter/index.vue'
+
+const route = useRoute();
 </script>
 
 <template>
@@ -12,7 +15,7 @@ import ViewFooter from '@/layout/ViewFooter/index.vue'
       <a-layout-content>
         <div class="h-[calc(100vh_-_var(--header-height))] overflow-x-hidden overflow-y-auto">
           <RouterView/>
-          <ViewFooter/>
+          <ViewFooter v-if="route?.meta?.footer"/>
         </div>
       </a-layout-content>
     </a-layout>

@@ -9,19 +9,19 @@ import logoPath from '@/assets/images/logo.jpg';
 <template>
   <div class="flex items-center justify-between px-20px">
     <div class="flex items-center">
-      <h1 class="flex items-center">
+      <h1 class="flex items-center font-500">
         <img
-          class="size-28px rounded-5px hidden md:inline-block align-text-top"
+          class="size-24px rounded-3px align-text-top"
           :src="logoPath"
           alt="Blink"
         />
-        <span class="ml-8px font-size-20px">
+        <span class="ml-12px font-size-20px">
           <span>Blink</span>
         </span>
       </h1>
     </div>
     <div class="flex items-center">
-      <a-space class="hidden lg:flex font-size-18px" :size="32">
+      <a-space class="hidden lg:flex font-size-16px" :size="32">
         <Github />
         <Reload />
         <Fullscreen />
