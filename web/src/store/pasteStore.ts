@@ -26,7 +26,7 @@ export const usePasteStore = defineStore('paste', {
             this.error = null
 
             try {
-                const response = await request.post('/api/create', {
+                const response = await request.post('/create', {
                     content,
                     expiresIn
                 })
@@ -53,7 +53,7 @@ export const usePasteStore = defineStore('paste', {
             this.error = null
 
             try {
-                const response = await request.get(`/api/raw/${id}`)
+                const response = await request.get(`/raw/${id}`)
                 this.currentPaste = response.data
             } catch (error: any) {
                 this.error = error.response?.data?.error || error.message || '获取失败'

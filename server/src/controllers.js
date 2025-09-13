@@ -31,7 +31,7 @@ export const createPaste = async (req, res) => {
             success: true,
             id,
             expiresIn,
-            url: `${req.protocol}://${req.get('host')}/p/${id}`
+            url: `${req.protocol}://${req.get('host')}/view/${id}`
         });
     } catch (error) {
         console.error('创建失败:', error);

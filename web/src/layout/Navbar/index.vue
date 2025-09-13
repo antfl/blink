@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import logoPath from '@/assets/images/logo.jpg';
+
 import Fullscreen from '@/layout/Navbar/components/Fullscreen.vue';
 import Github from '@/layout/Navbar/components/Github.vue';
 import Reload from '@/layout/Navbar/components/Reload.vue';
-import logoPath from '@/assets/images/logo.jpg';
+import GroupChat from "@/layout/Navbar/components/GroupChat.vue";
 
 </script>
 
@@ -22,6 +24,7 @@ import logoPath from '@/assets/images/logo.jpg';
     </div>
     <div class="flex items-center">
       <a-space class="hidden lg:flex font-size-16px" :size="32">
+        <GroupChat />
         <Github />
         <Reload />
         <Fullscreen />
