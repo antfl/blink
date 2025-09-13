@@ -1,11 +1,10 @@
 import express from 'express';
 import { createPaste, getPaste, getRawPaste } from './controllers.js';
-import { apiLimiter } from './middleware.js';
 
 const router = express.Router();
 
 // 创建
-router.post('/create', apiLimiter, createPaste);
+router.post('/create', createPaste);
 
 // 获取（HTML 渲染）
 router.get('/paste/:id', getPaste);

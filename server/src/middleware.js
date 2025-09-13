@@ -3,7 +3,7 @@ import rateLimit from 'express-rate-limit';
 // 请求频率限制
 export const apiLimiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 分钟
-    max: 100, // 每个 IP 限制 100 次请求
+    max: 50, // 每个 IP 限制 100 次请求
     message: '请求过于频繁，请稍后再试'
 });
 

@@ -4,6 +4,7 @@ import {fileURLToPath} from 'url';
 import routes from './routes.js';
 import middleware from './middleware.js';
 import dotenv from 'dotenv';
+import cors from 'cors';
 
 dotenv.config();
 
@@ -11,7 +12,22 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
+
+
+app.set('trust proxy', true);
+
 const port = process.env.PORT || 3000;
+
+app.use(middleware.apiLimiter);
+
+const corsOptions = {
+    origin: 'https://blink.byteout.cn',
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    optionsSuccessStatus: 200,
+    credentials: true
+};
+app.use(cors(corsOptions));
 
 // 注册中间件
 app.use(express.json());
